@@ -33,7 +33,7 @@ layout
     "sidebar main"
     "footer footer";
     height: 100vh;
-    overflow: hidden
+    overflow: hidden;
 }
 
 
@@ -50,11 +50,24 @@ header{
     color: blue;
 }
 
+#altlogo{
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-right: 2px;
+    color: blue;
+    text-align: right;
+}
+
 .sidebar{
     grid-area: sidebar;
     background-color: #cdcdcd;
     border: 1px solid #0D0A0B;
+    padding-top: 40px;
     /* border-top: none; */
+}
+
+nav li::after{
+    content:'-------';
 }
 
 /* .sidebar:hover{
@@ -190,4 +203,51 @@ images
 
 #gatta{
 
+}
+
+/*
+======================================================================================
+responsive design for mobile
+======================================================================================
+*/
+
+@media only screen and (min-width: 600px){
+    #altlogo{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .container{
+        height: auto;
+        overflow: visible;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+        "header"
+        "sidebar"
+        "main"
+        "footer";
+        overflow: visible;
+    }
+
+    #asciilogo {
+        display: none;
+    }
+
+    .sidebar {
+        overflow: visible;
+        text-align: right;
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+
+    nav li::after{
+        content:'--';
+    }
+
+    .portfolio-block{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
