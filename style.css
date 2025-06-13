@@ -152,6 +152,11 @@ h2{
     padding: 16px;
 }
 
+.info{
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
 .writing-quote{
     line-height: 1.5;
     font-style: italic;
